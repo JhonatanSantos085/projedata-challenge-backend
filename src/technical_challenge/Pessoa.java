@@ -1,9 +1,13 @@
+package technical_challenge;
+
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Pessoa {
 
     private String nome;
     private LocalDate dataNascimento;
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public Pessoa(String nome, LocalDate dataNascimento) {
         this.nome = nome;
@@ -28,9 +32,6 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" +
-                "Nome: '" + nome + '\'' +
-                ", Data Nascimento: " + dataNascimento +
-                '}';
+        return "Nome: " + nome + ", Data Nascimento: " + dataNascimento.format(FORMATTER);
     }
 }
