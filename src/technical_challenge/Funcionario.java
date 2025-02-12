@@ -1,5 +1,9 @@
+package technical_challenge;
+
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.util.Locale;
 
 public class Funcionario extends Pessoa{
 
@@ -30,6 +34,8 @@ public class Funcionario extends Pessoa{
 
     @Override
     public String toString() {
-        return super.toString() + ", salario: " + salario + " , Funcao: " + funcao;
+        NumberFormat formatar = NumberFormat.getInstance(new Locale("pt", "BR"));
+        String salarioFormatado = formatar.format(salario);
+        return super.toString() + ", Salario: " + salarioFormatado + " , Funcao: " + funcao;
     }
 }
